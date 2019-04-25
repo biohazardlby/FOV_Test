@@ -6,6 +6,7 @@ using UnityEngine;
 public class Experiment_Controller : MonoBehaviour
 {
     public GameObject camera;
+    public GameObject canvas;
     [Header("FOV")]
     public GameObject half_Sphere_prefab;
     [Header("Output")]
@@ -169,6 +170,7 @@ public class Experiment_Controller : MonoBehaviour
                     + (180 -half_Sphere_Left_GO.transform.localRotation.eulerAngles.y) + "\t"
                     + half_Sphere_Right_GO.transform.localRotation.eulerAngles.y + "\n"
                 );
+            StartCoroutine(toggle_record_Marker(0.5f));
         }
     }
     void flash_sphere()
@@ -181,6 +183,12 @@ public class Experiment_Controller : MonoBehaviour
     void wait_n_changeColor(float t, int times, Renderer rend)
     {
         StartCoroutine(wait_n_changeColor_Helper(t, 0, times, false, rend));
+    }
+    IEnumerator toggle_record_Marker(float t)
+    {
+        canvas.GetComponent<CanvasGroup>().alpha = 1;
+        yield return new WaitForSeconds(t);
+        canvas.GetComponent<CanvasGroup>().alpha = 0;
     }
     IEnumerator wait_n_changeColor_Helper(float t, int cur, int tar, bool black, Renderer rend)
     {
