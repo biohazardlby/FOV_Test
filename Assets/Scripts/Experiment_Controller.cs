@@ -165,9 +165,9 @@ public class Experiment_Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            writer.Write(sphere_roll_GO.transform.rotation.eulerAngles.z + "\t"
-                    + (180 -half_Sphere_Left_GO.transform.rotation.eulerAngles.y) + "\t"
-                    + half_Sphere_Right_GO.transform.rotation.eulerAngles.y + "\n"
+            writer.Write(sphere_roll_GO.transform.localRotation.eulerAngles.z + "\t"
+                    + (180 -half_Sphere_Left_GO.transform.localRotation.eulerAngles.y) + "\t"
+                    + half_Sphere_Right_GO.transform.localRotation.eulerAngles.y + "\n"
                 );
         }
     }
@@ -175,8 +175,8 @@ public class Experiment_Controller : MonoBehaviour
     {
         Renderer rend1 = half_Sphere_Left_GO.GetComponent<Renderer>();
         Renderer rend2 = half_Sphere_Right_GO.GetComponent<Renderer>();
-        wait_n_changeColor(0.5f, 4, rend1);
-        wait_n_changeColor(0.5f, 4, rend2);
+        wait_n_changeColor(0.25f, 2, rend1);
+        wait_n_changeColor(0.25f, 2, rend2);
     }
     void wait_n_changeColor(float t, int times, Renderer rend)
     {

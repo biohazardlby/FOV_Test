@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Checker_Ctrl.cs" />
     <Compile Include="Assets\Scripts\Experiment_Controller.cs" />
-    <None Include="Assets\data\BL_21-31.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Graduate/IMGS-624/FOV_Test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
